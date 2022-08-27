@@ -1,5 +1,5 @@
 .main-large-dropdown {
-    width: 240px;
+    width: 280px;
     @include FlexMixin(row,space-between,center);
     height: 40px;
     padding:0rem 1rem 0rem 1rem;
@@ -31,12 +31,30 @@
 
 .relative-modal-1 {
     position: relative;
-    top:60px;
+    top:120px;
+    left:-100px;
     background: $white-color;
     width: 300px;
     @include FlexMixin(row, space-between,space-around);
     z-index:2;
     height: 200px;
     border-radius: 5px;
+
+    .rm1-left {
+        @include FlexMixin(column, space-around, flex-start);
+        width: 140px;
+
+        input {
+            width:100px;
+            height: 30px;
+            border-radius: 5px;
+            outline:none;
+
+            &:hover {
+                outline:none;
+            }
+
+        }
+    }
 
 }

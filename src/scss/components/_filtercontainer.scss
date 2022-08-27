@@ -4,4 +4,10 @@
     background: $special-black-color;
     border-radius: 5px;
     margin-top: 30px;
+    height: 90px;
+
+    .upper-region {
+        @include FlexMixin(row,space-around,center);
+        width: 660px;
+    }
 }

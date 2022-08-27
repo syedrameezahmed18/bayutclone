@@ -5,7 +5,7 @@ const LargeDropdown = () => {
   return (
 
     <div className='main-large-dropdown'>
-      <input type="Enter location" />
+      <input placeholder="Enter location" />
       <MdLocationOn size={20} color={'#757575'}/>
     </div>
 

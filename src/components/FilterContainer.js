@@ -7,12 +7,16 @@ const FilterContainer = ({ type }) => {
   const PropertyFilters = () => {
     return (
       <>
-        <div>
+        <div className='upper-region'>
           <RegularDropDown />
           <LargeDropdown />
+          <RegularDropDown />
         </div>
-        <div>
-
+        <div className='upper-region'>
+        <RegularDropDown />
+        <RegularDropDown />
+        <RegularDropDown />
+        <RegularDropDown />
         </div>
       </>
     )

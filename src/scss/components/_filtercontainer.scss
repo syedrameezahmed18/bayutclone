@@ -4,10 +4,37 @@
     background: $special-black-color;
     border-radius: 5px;
     margin-top: 30px;
-    height: 90px;
+    height: 160px;
 
     .upper-region {
         @include FlexMixin(row,space-around,center);
         width: 660px;
+    }
+
+    .section-foot {
+        width: 93%;
+        height: 50px;
+        padding: 0rem 1rem;
+        background: url('https://www.bayut.com/assets/commuteSearchHomeBanner_noinline.cf49b67cf1abc52ffa5f2163f8f66ead.svg');
+
+
+        background-repeat: no-repeat;
+        border-radius: 5px;
+        @include FlexMixin(row, flex-start,center);
+
+       P {
+        &:nth-child(1) {
+            background: red;
+            padding: 0.3rem 0.3rem;
+            margin-right: 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            color: $white-color
+        }
+        &:nth-child(2) {
+            font-weight: 600;
+            margin-right: 10px;
+        }
+    }
     }
 }

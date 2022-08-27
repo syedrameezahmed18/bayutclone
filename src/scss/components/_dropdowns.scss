@@ -31,16 +31,41 @@
 
 .relative-modal-1 {
     position: relative;
-    top:120px;
-    left:-100px;
+    top:110px;
+    left:-150px;
     background: $white-color;
     width: 300px;
-    @include FlexMixin(row, space-between,space-around);
+    @include FlexMixin(row, space-between,flex-start);
     z-index:2;
-    height: 200px;
+
     border-radius: 5px;
+    padding: 1rem;
+    box-shadow: '1px 2px 9px #F4AAB9';
 
     .rm1-left {
+        @include FlexMixin(column, space-around, flex-start);
+        width: 140px;
+
+        >p {
+            margin-top: 10px;
+        }
+
+        input {
+            width:110px;
+            height: 30px;
+            border-radius: 5px;
+            outline:none;
+            border: 1px solid $gray-color;
+            padding-left: 0.5rem;
+            margin-top: 10px;
+            &:hover {
+                outline:none;
+            }
+
+        }
+    }
+
+    .rm1-right {
         @include FlexMixin(column, space-around, flex-start);
         width: 140px;
 

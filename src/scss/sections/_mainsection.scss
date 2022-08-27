@@ -23,6 +23,7 @@
         background: $special-black-color;
         border-radius: 5px;
         padding:0.4rem;
+        margin-top: 10px;
 
         .main-select-each {
             @include FlexMixin(row,center,center);

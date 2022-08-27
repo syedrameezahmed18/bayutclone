@@ -1,0 +1,86 @@
+.header-main {
+    width: 100vw;
+    @include FlexMixin(column, space-between, center);
+    background: $light-gray-color;
+
+
+    .header-top-main {
+        width: 85%;
+        @include FlexMixin(row, space-between, center);
+        height: 1.1rem;
+        font-size: 0.9rem;
+        background: $light-gray-color;
+        padding: 0.75rem 0rem 0.75rem 0rem;
+
+        .header-top-main-left {
+            @include FlexMixin(row, space-around, center);
+            width: 25%;
+            min-width: 180px;
+            p {
+                margin-bottom: 2px;
+                &:hover {
+                    color: $blue-green-color;
+                    cursor: pointer;
+                }
+            }
+
+            .header-top-left-inner {
+                @include FlexMixin(row, center, center);
+
+                &:hover {
+                    color: $blue-green-color;
+                    cursor: pointer;
+                }
+                p {
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+
+        .header-top-main-right {
+            @include FlexMixin(row, space-around, center);
+            width: 30%;
+            min-width: 400px;
+
+            p {
+                margin-bottom: 2px;
+                &:hover {
+                    color: $blue-green-color;
+                    cursor: pointer;
+                }
+            }
+
+            .header-top-main-right-each {
+                @include FlexMixin(row, space-around, center);
+
+                &:hover {
+                    color: $blue-green-color;
+                    cursor: pointer;
+                }
+                p {
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+    }
+
+    .header-bottom-main {
+        @include FlexMixin(row,space-around,center);
+        width: 100%;
+        height: 5rem;
+        background: $white-color;
+
+        .header-bottom-right {
+            width: 50%;
+            min-width: 500px;
+            @include FlexMixin(row, space-around, center);
+
+            p {
+                &:hover {
+                    color: $blue-green-color;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

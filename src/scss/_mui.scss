@@ -1,0 +1,43 @@
+.Dropdown-control {
+    background: none;
+    border:none;
+    width: 4rem;
+
+    &:hover {
+        color: $blue-green-color;
+        cursor: pointer;
+    }
+}
+
+.Dropdown-arrow {
+    margin-top: 3px;
+    border-color: $black-color transparent transparent;
+
+    &:hover {
+        border-color: $blue-green-color transparent transparent;
+        cursor: pointer;
+    }
+}
+
+.Dropdown-menu {
+    border-radius: 5px;
+    width: 10rem;
+    max-height: 400px;
+}
+
+.Dropdown-option {
+    padding: 5px 7px;
+
+    &:hover {
+        background: none;
+        text-decoration: underline;
+    }
+}
+
+.lower-dropdown-mui {
+    width: 5.4rem !important;
+}
+
+.lower-small-drop {
+    width: 5.4rem !important;
+}

@@ -1,0 +1,19 @@
+.home-main {
+    min-height: 100vh;
+    @include FlexMixin(column, flex-start,center);
+    width: 100vw;
+    background: $white-color;
+
+}
+
+.cards-container {
+    @include FlexMixin(row, space-between,center);
+    margin-top: 4rem;
+    width:90%;
+
+
+    @media (max-width:800px) {
+        min-height: 330px;
+        @include FlexMixin(column, space-around, center)
+    }
+}

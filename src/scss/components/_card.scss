@@ -1,0 +1,49 @@
+.main-card {
+    @include FlexMixin(column,flex-start,flex-start);
+    border-radius: 10px;
+    padding:1rem;
+    width: 30%;
+    min-width: 300px;
+    min-height: 230px;
+
+    .main-card-head {
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    .main-card-body {
+        font-size: 1.1rem;
+        margin-top: 15px;
+        width: 70%;
+    }
+}
+
+.main-mob-card {
+    min-height: 5.5rem;
+    width: 90vw;
+    border-radius: 10px;
+    @include FlexMixin(row,space-between,center);
+    border: 1px solid $gray-color;
+
+    .main-mob-img {
+        width: 30%;
+        object-fit: cover;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        height: 5.5rem;
+    }
+
+    .main-mob-texts {
+        @include FlexMixin(column, space-evenly, flex-start);
+        height: 5.5rem;
+        width: 60%;
+        p {
+            font-size: 0.8rem;
+            font-weight: 400;
+        }
+
+        h4 {
+            font-weight: 500;
+        }
+    }
+}

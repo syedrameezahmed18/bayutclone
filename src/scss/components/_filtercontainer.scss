@@ -1,0 +1,7 @@
+.filter-containers {
+    padding: 1rem;
+    @include FlexMixin(column,space-between,center);
+    background: $special-black-color;
+    border-radius: 5px;
+    margin-top: 30px;
+}

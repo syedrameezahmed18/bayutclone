@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import Card from '../../components/Card'
 import Header from '../../components/Header'
 import { ScreenContext } from '../../context/ScreenContext'
+import MainSection from '../../sections/MainSection'
 
 
 const Home = () => {
@@ -39,6 +40,7 @@ const Home = () => {
     return (
         <div className="home-main">
             <Header />
+            <MainSection />
             <div className="cards-container">
                 {cardData.map((each, index) => {
                     return <Card {...each}/>

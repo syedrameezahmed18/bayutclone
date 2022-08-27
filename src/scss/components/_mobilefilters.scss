@@ -86,3 +86,75 @@
         color: #333;
     }
 }
+
+.second-modal-div {
+    margin-top: 20px;
+    border-radius: 10px;
+    height: 100px;
+    padding: 1rem 0rem;
+    background: url('https://www.bayut.com/assets/iconFindHomesByCommuteTime_noinline.c455a97acc5c397ccfb811246f2f512f.svg');
+    background-repeat: no-repeat;
+    width: 90vw;
+
+    p {
+
+        &:nth-child(1) {
+        margin-left: 1rem;
+        width:50%;
+        margin-bottom: 1rem;
+        color: $blue-green-color;
+        font-size: 14px;
+        }
+
+        &:nth-child(2) {
+            margin-left: 1rem;
+            width:40%;
+            font-weight: 600;
+            color: $blue-green-color
+        }
+    }
+}
+
+.furnish-div {
+    margin-top: 20px;
+    @include FlexMixin(column, space-around, flex-start);
+    height: 80px;
+    width: 90%;
+
+    >p {
+        font-weight: 600
+    }
+
+    .furnish-inner {
+        @include FlexMixin(row, flex-start,center);
+        width: 100%;
+
+        .furnish-innest {
+            padding: 0.5rem 1rem;
+            border: 1px solid $gray-color;
+            border-radius: 20px;
+            color: #777;
+            @include FlexMixin(row,center,center);
+            margin-right: 10px;
+        }
+
+        .furnish-innest-green {
+            padding: 0.5rem 1rem;
+            border: 1px solid $gray-color;
+            border-radius: 20px;
+            background: $light-green-color;
+            color: $green-color;
+            @include FlexMixin(row,center,center);
+            margin-right: 10px;
+        }
+    }
+}
+
+.sticky-footer {
+    @include FlexMixin(row, space-around, center);
+    height: 70px;
+    position: fixed;
+    width:100%;
+    bottom:0px;
+    border-top: 1px solid $gray-color;
+}

@@ -17,3 +17,46 @@
         @include FlexMixin(column, space-around, center)
     }
 }
+
+.mob-main {
+    width: 100vw;
+    @include FlexMixin(column, space-between,center);
+    height: 400px;
+    background: url('https://www.bayut.com/assets/imageBackgroundLarge.99b0fdaa4e2448fbddf40424337357ac.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .mob-header {
+        @include FlexMixin(row, space-between,center);
+        width:90%;
+
+        >img {
+            height: 40px;
+            width: 80px;
+        }
+
+        div {
+            width: 12%;
+        }
+    }
+
+    .mob-header-below {
+        @include FlexMixin(column, space-around, center);
+        width: 100vw;
+        background: #111;
+        height: 130px;
+
+        >p {
+            color:$white-color;
+            font-size: 1rem;
+            font-weight: 600
+        }
+
+        .mob-header-each {
+            @include FlexMixin(row, space-around, center);
+            width: 90%;
+        }
+
+    }
+
+}

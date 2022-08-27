@@ -5,7 +5,7 @@ const Button = (props) => {
 
   const styles = {
       width: props.width || '120px',
-      border: props.type === "white" || props.type === "green"? `1px solid ${Colors.blueGreenColor}`:'none',
+      border: props.type === "white" || props.type === "green" ? `1px solid ${Colors.blueGreenColor}`:props.type === "blue" ? `1px solid ${Colors.greenColor}`: 'none',
       height: props.height || '35px',
       display:'flex',
       flexDirection:'row',
@@ -15,7 +15,7 @@ const Button = (props) => {
       marginTop: props.marginTop || "0px",
       cursor:'pointer',
       borderRadius: props.borderRadius || '5px',
-      background: props.type === "green" ? Colors.blueGreenColor:'white'
+      background: props.type === "green"  ? Colors.blueGreenColor:props.type === "blue" ? Colors.greenColor: 'white'
   }
 
   return (

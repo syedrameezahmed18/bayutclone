@@ -4,8 +4,10 @@ import Header from '../../components/Header'
 import { ScreenContext } from '../../context/ScreenContext'
 import MainSection from '../../sections/MainSection'
 import Button from '../../components/Button'
-import {AiOutlineClose} from 'react-icons/ai'
-import {IoMdSettings} from 'react-icons/io'
+import { AiOutlineClose } from 'react-icons/ai'
+import { IoMdSettings } from 'react-icons/io'
+import {BsArrowLeft} from 'react-icons/bs'
+import { FullScreen, useFullScreenHandle } from 'react-full-screen'
 
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -25,12 +27,15 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import MobileFilters from '../../components/MobileFilters'
 
 const Home = () => {
 
     const { size } = useContext(ScreenContext)
 
     const [cardData, setCardData] = useState([])
+    const [isMobileFilters, setIsMobileFilters] = useState(false)
+    const handle = useFullScreenHandle()
 
     useEffect(() => {
 
@@ -116,11 +121,11 @@ const Home = () => {
             marginLeft: 0,
         },
         headerLeft: {
-            display:'flex',
-            flexDirection:'row',
-            justifyContent:'space-around',
-            alignItems:'center',
-            width:'100px'
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-around',
+            alignItems: 'center',
+            width: '100px'
         }
     }));
 
@@ -141,6 +146,10 @@ const Home = () => {
         const handleDrawerClose = () => {
             setOpen(false);
         };
+
+        const [show, setShow] = useState(false)
+
+
 
         return (
             <>
@@ -165,10 +174,18 @@ const Home = () => {
                     <div className='mob-header-below'>
                         <p>Search properties for sale and to rent in the UAE</p>
                         <div className='mob-header-each'>
-                            <Button text="Property Search" type="blue" width={'40%'}/>
+                            <Button onClick={() => setShow(true)} text="Property Search" type="blue" width={'40%'} />
                             <Button text="TruValue" type="blue" width={'40%'} />
                         </div>
                     </div>
+
+                    {
+                        show &&
+
+                        <MobileFilters show={show} handleClose={()=> setShow(false)} />
+                    }
+
+
                 </div>
 
                 <Drawer
@@ -182,15 +199,15 @@ const Home = () => {
                 >
                     <div className={classes.drawerHeader}>
                         <div className={classes.headerLeft}>
-                        <IoMdSettings />
-                        <p style={{ fontWeight: 600 }}>العربية</p>
+                            <IoMdSettings />
+                            <p style={{ fontWeight: 600 }}>العربية</p>
                         </div>
                         <IconButton onClick={handleDrawerClose}>
                             {theme.direction === 'ltr' ? <AiOutlineClose /> : <AiOutlineClose />}
                         </IconButton>
                     </div>
-                    <div style={{alignSelf:'center'}}>
-                    <Button text="Sign up or Log in" type="green" width="200px" />
+                    <div style={{ alignSelf: 'center' }}>
+                        <Button text="Sign up or Log in" type="green" width="200px" />
                     </div>
                     <List>
                         {['Blog', 'Find an Agency', 'Floor Plans', 'Guides', 'Market Intelligence', 'Agent Portal', 'Events', 'Careers', 'Company'].map((text, index) => (
@@ -225,6 +242,8 @@ const Home = () => {
                     return <Card {...each} />
                 })}
             </div>
+
+            {/* {isMobileFilters && <MobileFilters show={isMobileFilters} hide={()=> setIsMobileFilters(false)}/> } */}
         </div>
     )
 }

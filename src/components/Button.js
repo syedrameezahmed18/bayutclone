@@ -19,7 +19,7 @@ const Button = (props) => {
   }
 
   return (
-    <div style={styles}>
+    <div style={styles} onClick={props.onClick}>
         <p>{props.text || "Button"}</p>
     </div>
   )
